@@ -22,6 +22,9 @@
 		F0280DCE18DA599E00D4FEFE /* NTAttributedStringBuilder.m in Sources */ = {isa = PBXBuildFile; fileRef = F0280DCD18DA599E00D4FEFE /* NTAttributedStringBuilder.m */; };
 		F0280DD918DA6FDD00D4FEFE /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F0280DD718DA6FDD00D4FEFE /* MainViewController.m */; };
 		F0280DDA18DA6FDD00D4FEFE /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = F0280DD818DA6FDD00D4FEFE /* MainViewController.xib */; };
+		F0280DDD18DB4B0600D4FEFE /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F0280DDB18DB4B0600D4FEFE /* LICENSE */; };
+		F0280DDE18DB4B0600D4FEFE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F0280DDC18DB4B0600D4FEFE /* README.md */; };
+		F0280DE018DB4C6300D4FEFE /* NTAttributedStringBuilder.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F0280DDF18DB4C6300D4FEFE /* NTAttributedStringBuilder.podspec */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +59,9 @@
 		F0280DD618DA6FDD00D4FEFE /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
 		F0280DD718DA6FDD00D4FEFE /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
 		F0280DD818DA6FDD00D4FEFE /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		F0280DDB18DB4B0600D4FEFE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		F0280DDC18DB4B0600D4FEFE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		F0280DDF18DB4C6300D4FEFE /* NTAttributedStringBuilder.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NTAttributedStringBuilder.podspec; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,11 +163,14 @@
 		F0280DCB18DA597E00D4FEFE /* NTAttributedStringBuilder */ = {
 			isa = PBXGroup;
 			children = (
+				F0280DDF18DB4C6300D4FEFE /* NTAttributedStringBuilder.podspec */,
+				F0280DDB18DB4B0600D4FEFE /* LICENSE */,
 				F0280DCC18DA599E00D4FEFE /* NTAttributedStringBuilder.h */,
 				F0280DCD18DA599E00D4FEFE /* NTAttributedStringBuilder.m */,
+				F0280DDC18DB4B0600D4FEFE /* README.md */,
 			);
 			name = NTAttributedStringBuilder;
-			path = ../../Core;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		F0280DD518DA6FBC00D4FEFE /* ViewControllers */ = {
@@ -251,7 +260,10 @@
 			files = (
 				F0280DA718DA593700D4FEFE /* InfoPlist.strings in Resources */,
 				F0280DDA18DA6FDD00D4FEFE /* MainViewController.xib in Resources */,
+				F0280DDE18DB4B0600D4FEFE /* README.md in Resources */,
+				F0280DDD18DB4B0600D4FEFE /* LICENSE in Resources */,
 				F0280DAF18DA593700D4FEFE /* Images.xcassets in Resources */,
+				F0280DE018DB4C6300D4FEFE /* NTAttributedStringBuilder.podspec in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
