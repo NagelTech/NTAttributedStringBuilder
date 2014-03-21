@@ -1,6 +1,5 @@
 //
 //  NTAttributedStringBuilder.m
-//  NTAttributedStringBuilderSample
 //
 //  Created by Ethan Nagel on 3/19/14.
 //  Copyright (c) 2014 NagelTech. All rights reserved.
@@ -519,7 +518,7 @@
     if ( !_attributeStack )
         _attributeStack = [NSMutableArray array];
     
-    [_attributeStack addObject:_attributes];
+    [_attributeStack addObject:[_attributes copy]];
 }
 
 
@@ -528,7 +527,7 @@
     if ( !_attributeStack.count )
         @throw [NSException exceptionWithName:@"UnbalancedPushPop" reason:@"Unbalanced push/pop calls to NTAttributedStringBuilder" userInfo:nil];
     
-    _attributes = [_attributeStack lastObject];
+    _attributes = [[_attributeStack lastObject] mutableCopy];
     [_attributeStack removeLastObject];
 }
 
@@ -624,122 +623,6 @@
     
     return builder.attributedString;
 }
-
-@end
-
-
-@interface NTAttr ()
-
-@property (nonatomic,copy) void (^block)(NTAttributedStringBuilder *b);
-
-+(NTAttr *)attrWithBlock:(void (^)(NTAttributedStringBuilder *b))block;
-
-@end
-
-
-@implementation NTAttr
-
-
-+(NTAttr *)attrWithBlock:(void (^)(NTAttributedStringBuilder *))block
-{
-    NTAttr *attr = [[NTAttr alloc] init];
-    attr.block = block;
-    
-    return attr;
-}
-
-
--(void)appendToAttributedStringBuilder:(NTAttributedStringBuilder *)builder
-{
-    self.block(builder);
-}
-
-
-#define AUTO_METHOD(type,name) +(NTAttr *)name:(type)name { return [NTAttr attrWithBlock:^(NTAttributedStringBuilder *b) { b.name = name; } ]; }
-
-// copy any new declarations and perform an xcode regex search: \+\(NTAttr \*\)(.*):\((.*)\).*$ replace: AUTO_METHOD(\2, \1)
-
-AUTO_METHOD(UIFont *, font)
-AUTO_METHOD(CGFloat, fontSize)
-AUTO_METHOD(NSString *, fontName)
-AUTO_METHOD(NSParagraphStyle *, paragraphStyle)
-AUTO_METHOD(CGFloat, lineSpacing)
-AUTO_METHOD(CGFloat, paragraphSpacing)
-AUTO_METHOD(NSTextAlignment, alignment)
-AUTO_METHOD(CGFloat, firstLineHeadIndent)
-AUTO_METHOD(CGFloat, headIndent)
-AUTO_METHOD(CGFloat, tailIndent)
-AUTO_METHOD(NSLineBreakMode, lineBreakMode)
-AUTO_METHOD(CGFloat, minimumLineHeight)
-AUTO_METHOD(CGFloat, maximumLineHeight)
-AUTO_METHOD(NSWritingDirection, baseWritingDirection)
-AUTO_METHOD(CGFloat, lineHeightMultiple)
-AUTO_METHOD(CGFloat, paragraphSpacingBefore)
-AUTO_METHOD(float, hyphenationFactor)
-AUTO_METHOD(NSUnderlineStyle, strikethroughStyle)
-AUTO_METHOD(UIColor *, strikethroughColor)
-AUTO_METHOD(NSUnderlineStyle, underlineStyle)
-AUTO_METHOD(UIColor *, underlineColor)
-AUTO_METHOD(UIColor *, strokeColor)
-AUTO_METHOD(float, strokeWidth)
-AUTO_METHOD(NSShadow *, shadow)
-AUTO_METHOD(CGSize, shadowOffset)
-AUTO_METHOD(UIColor *, shadowColor)
-AUTO_METHOD(CGFloat, shadowBlurRadius)
-AUTO_METHOD(NSString *, textEffect)
-AUTO_METHOD(BOOL, textEffectLetterPress)
-AUTO_METHOD(UIColor *, foregroundColor)
-AUTO_METHOD(UIColor *, backgroundColor)
-
-@end
-
-
-@interface UIFont (NTAttr) <NTAttributedStringBuilderElement>
-
-@end
-
-
-@implementation UIFont (NTAttr)
-
-
--(void)appendToAttributedStringBuilder:(NTAttributedStringBuilder *)builder
-{
-    builder.font = self;
-}
-
-
-@end
-
-
-@interface UIColor (NTAttr) <NTAttributedStringBuilderElement>
-
-@end
-
-
-@implementation UIColor (NTAttr)
-
--(void)appendToAttributedStringBuilder:(NTAttributedStringBuilder *)builder
-{
-    builder.foregroundColor = self;
-}
-
-@end
-
-
-
-@interface NSParagraphStyle (NTAttr) <NTAttributedStringBuilderElement>
-
-@end
-
-
-@implementation NSParagraphStyle (NTAttr)
-
-
--(void)appendToAttributedStringBuilder:(NTAttributedStringBuilder *)builder
-{
-    builder.paragraphStyle = self;
-}
-
 
 @end
 

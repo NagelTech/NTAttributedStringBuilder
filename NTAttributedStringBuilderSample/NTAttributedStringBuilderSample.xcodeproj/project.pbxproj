@@ -25,6 +25,8 @@
 		F0280DDD18DB4B0600D4FEFE /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = F0280DDB18DB4B0600D4FEFE /* LICENSE */; };
 		F0280DDE18DB4B0600D4FEFE /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = F0280DDC18DB4B0600D4FEFE /* README.md */; };
 		F0280DE018DB4C6300D4FEFE /* NTAttributedStringBuilder.podspec in Resources */ = {isa = PBXBuildFile; fileRef = F0280DDF18DB4C6300D4FEFE /* NTAttributedStringBuilder.podspec */; };
+		F0280DF418DBB3D700D4FEFE /* NTAttr.m in Sources */ = {isa = PBXBuildFile; fileRef = F0280DF318DBB3D700D4FEFE /* NTAttr.m */; };
+		F0280DF818DBB6D800D4FEFE /* NTAttrCategories.m in Sources */ = {isa = PBXBuildFile; fileRef = F0280DF718DBB6D800D4FEFE /* NTAttrCategories.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,11 @@
 		F0280DDB18DB4B0600D4FEFE /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		F0280DDC18DB4B0600D4FEFE /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		F0280DDF18DB4C6300D4FEFE /* NTAttributedStringBuilder.podspec */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NTAttributedStringBuilder.podspec; sourceTree = "<group>"; };
+		F0280DF218DBB3D700D4FEFE /* NTAttr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTAttr.h; sourceTree = "<group>"; };
+		F0280DF318DBB3D700D4FEFE /* NTAttr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTAttr.m; sourceTree = "<group>"; };
+		F0280DF518DBB64D00D4FEFE /* NTAttributedStringBuilderElement.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTAttributedStringBuilderElement.h; sourceTree = "<group>"; };
+		F0280DF618DBB6D800D4FEFE /* NTAttrCategories.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTAttrCategories.h; sourceTree = "<group>"; };
+		F0280DF718DBB6D800D4FEFE /* NTAttrCategories.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTAttrCategories.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -163,10 +170,15 @@
 		F0280DCB18DA597E00D4FEFE /* NTAttributedStringBuilder */ = {
 			isa = PBXGroup;
 			children = (
-				F0280DDF18DB4C6300D4FEFE /* NTAttributedStringBuilder.podspec */,
 				F0280DDB18DB4B0600D4FEFE /* LICENSE */,
+				F0280DF218DBB3D700D4FEFE /* NTAttr.h */,
+				F0280DF318DBB3D700D4FEFE /* NTAttr.m */,
+				F0280DF618DBB6D800D4FEFE /* NTAttrCategories.h */,
+				F0280DF718DBB6D800D4FEFE /* NTAttrCategories.m */,
 				F0280DCC18DA599E00D4FEFE /* NTAttributedStringBuilder.h */,
 				F0280DCD18DA599E00D4FEFE /* NTAttributedStringBuilder.m */,
+				F0280DDF18DB4C6300D4FEFE /* NTAttributedStringBuilder.podspec */,
+				F0280DF518DBB64D00D4FEFE /* NTAttributedStringBuilderElement.h */,
 				F0280DDC18DB4B0600D4FEFE /* README.md */,
 			);
 			name = NTAttributedStringBuilder;
@@ -282,10 +294,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0280DF818DBB6D800D4FEFE /* NTAttrCategories.m in Sources */,
 				F0280DAD18DA593700D4FEFE /* AppDelegate.m in Sources */,
 				F0280DA918DA593700D4FEFE /* main.m in Sources */,
 				F0280DCE18DA599E00D4FEFE /* NTAttributedStringBuilder.m in Sources */,
 				F0280DD918DA6FDD00D4FEFE /* MainViewController.m in Sources */,
+				F0280DF418DBB3D700D4FEFE /* NTAttr.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

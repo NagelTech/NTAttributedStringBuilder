@@ -175,6 +175,33 @@
 }
 
 
+-(NSAttributedString *)sample3
+{
+    NSArray *names = @[@"Ethan", @"Tom", @"Scott"];
+    
+    NTAttributedStringBuilder *b = [[NTAttributedStringBuilder alloc] init];
+    
+    NSArray *nameStyle = @[[NTAttr push], [UIColor redColor], [NTAttr fontName:@"Avenir-Heavy"], [NTAttr underlineStyle:NSUnderlineStyleSingle]];
+    NSArray *endNameStyle = @[[NTAttr pop]];
+    
+    b.font = [UIFont fontWithName:@"Avenir-Medium" size:18.0];
+    
+    [b appendFormat:@"Here is a list of %d names: ", names.count];
+    
+    for(int index=0; index<names.count; index++)
+    {
+        if ( index > 0 )
+            [b append:@", "];
+        
+        [b append:@[nameStyle, names[index], endNameStyle]];
+    }
+    
+    [b append:@"."];
+
+    return b.attributedString;
+}
+
+
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -182,7 +209,7 @@
     self.navigationItem.title = @"NTAttributedStringBuilder";
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"Next" style:UIBarButtonItemStyleBordered target:self action:@selector(doNext:)];
     
-    self.samples = @[[self sample0], [self sample1], [self sample2]];
+    self.samples = @[[self sample0], [self sample1], [self sample2], [self sample3]];
     
     self.sampleLabel.attributedText = self.samples[self.sampleIndex];
 }

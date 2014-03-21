@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name         = "NTAttributedStringBuilder"
   s.version      = "0.10"
-  s.summary      = "A fast, flexible and easy to use tool for building attributed strings. Does NOT rely on embedded HTML."
+  s.summary      = "A fast, flexible and easy to use tool for building attributed strings."
   s.homepage     = "https://github.com/NagelTech/NTAttributedStringBuilder"
   s.license      = { :type => 'MIT', :file => 'LICENSE' }
   s.author       = { "Ethan Nagel" => "eanagel@gmail.com" }
