@@ -1,8 +1,7 @@
 //
 //  NTAttributedStringBuilder.m
 //
-//  Created by Ethan Nagel on 3/19/14.
-//  Copyright (c) 2014 NagelTech. All rights reserved.
+//  Copyright (c) 2014 Ethan Nagel. All rights reserved.
 //
 
 #import "NTAttributedStringBuilder.h"
@@ -23,12 +22,9 @@
 @implementation NTAttributedStringBuilder
 
 
-+(NSDictionary *)defaultAttributes
++(UIFont *)defaultFont
 {
-    return
-    @{
-        NSFontAttributeName: [UIFont systemFontOfSize:[UIFont systemFontSize]],
-      };
+    return [UIFont fontWithName:@"HelveticaNeue" size:12.0];    // per NSMutableAttributedString docs
 }
 
 
@@ -43,7 +39,7 @@
     if ( (self=[super init]) )
     {
         _attributedString = [[NSMutableAttributedString alloc] init];
-        _attributes = [[self.class defaultAttributes] mutableCopy];
+        _attributes = [NSMutableDictionary dictionary];
     }
     
     return self;
@@ -57,7 +53,7 @@
 {
     UIFont *font = _attributes[NSFontAttributeName];
     
-    return (font) ? font : [UIFont systemFontOfSize:[UIFont systemFontSize]];
+    return (font) ? font : [self.class defaultFont];
 }
 
 
@@ -98,7 +94,7 @@
 {
     NSParagraphStyle *paragraphStyle = _attributes[NSParagraphStyleAttributeName];
     
-    return (paragraphStyle) ? paragraphStyle : [[NSParagraphStyle alloc] init];
+    return (paragraphStyle) ? paragraphStyle : [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
 }
 
 
@@ -121,7 +117,7 @@
     NSMutableParagraphStyle *paragraphStyle = [_attributes[NSParagraphStyleAttributeName]  mutableCopy];
     
     if ( !paragraphStyle )
-        paragraphStyle = [[NSMutableParagraphStyle alloc] init];
+        paragraphStyle = [[NSParagraphStyle defaultParagraphStyle] mutableCopy];
     
     block(paragraphStyle);
     
@@ -534,7 +530,7 @@
 
 -(void)clearAttributes
 {
-    _attributes = [[self.class defaultAttributes] mutableCopy];
+    [_attributes removeAllObjects];
 }
 
 
@@ -549,6 +545,9 @@
         return ;
     
     // Expand arrays...
+    // (We could extend NSArray to implement NTAttributdStringBuilderElement to accomplish this too, but
+    // maybe it's better to be clear about what's going here, eh?)
+    // (This actually goes for our treatment of NSStrings and NSDictionaries too.)
     
     if ( [item isKindOfClass:[NSArray class]] )
     {

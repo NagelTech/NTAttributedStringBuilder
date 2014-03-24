@@ -1,8 +1,7 @@
 //
 //  NTAttr.m
 //
-//  Created by Ethan Nagel on 3/20/14.
-//  Copyright (c) 2014 NagelTech. All rights reserved.
+//  Copyright (c) 2014 Ethan Nagel. All rights reserved.
 //
 
 

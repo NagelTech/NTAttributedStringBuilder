@@ -1,14 +1,13 @@
 //
-//  NTAttrCategories.m
+//  NTAttributedStringBuilderCategories.m
 //
-//  Created by Ethan Nagel on 3/20/14.
-//  Copyright (c) 2014 NagelTech. All rights reserved.
+//  Copyright (c) 2014 Ethan Nagel. All rights reserved.
 //
 
-#import "NTAttrCategories.h"
+#import "NTAttributedStringBuilderCategories.h"
 
 
-@implementation UIFont (NTAttr)
+@implementation UIFont (NTAttributedStringBuilder)
 
 -(void)appendToAttributedStringBuilder:(NTAttributedStringBuilder *)builder
 {
@@ -18,7 +17,7 @@
 @end
 
 
-@implementation UIColor (NTAttr)
+@implementation UIColor (NTAttributedStringBuilder)
 
 -(void)appendToAttributedStringBuilder:(NTAttributedStringBuilder *)builder
 {
@@ -28,7 +27,7 @@
 @end
 
 
-@implementation NSParagraphStyle (NTAttr)
+@implementation NSParagraphStyle (NTAttributedStringBuilder)
 
 -(void)appendToAttributedStringBuilder:(NTAttributedStringBuilder *)builder
 {
