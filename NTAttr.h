@@ -9,7 +9,7 @@
 #import "NTAttributedStringBuilderElement.h"
 
 
-/// Helper class for NTAttributedStringBuilder. Each member returns an object that will update the NTAttributedStringBuilder's
+/// Helper class for NTAttributedStringBuilder. Each ethod returns an object that will update the NTAttributedStringBuilder's
 /// current attributes when passed to [NTAttributedStringBuilder append:].
 @interface NTAttr : NSObject<NTAttributedStringBuilderElement>
 
