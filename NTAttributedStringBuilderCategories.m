@@ -4,7 +4,7 @@
 //  Copyright (c) 2014 Ethan Nagel. All rights reserved.
 //
 
-#import "NTAttributedStringBuilderCategories.h"
+#import "NTAttributedStringBuilder.h"
 
 
 @implementation UIFont (NTAttributedStringBuilder)
