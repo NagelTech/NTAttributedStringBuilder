@@ -1,7 +1,7 @@
 NTAttributedStringBuilder
 =========================
 
-A fast, flexible and easy-to-use tool for building attributed strings. Does NOT rely on embedded HTML.
+A fast, flexible and easy-to-use system for building attributed strings without resorting to embedded HTML.
 
 NSMutableAttributedString is very cumbersome and error-prone for building attributed strings. 
 The most common approach is to create AttributedStrings by parsing some kind of html or markdown. While this approach is workable, 
