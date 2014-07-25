@@ -62,6 +62,24 @@
 }
 
 
++(NTAttr *)startLink:(NSURL *)link
+{
+    return [NTAttr attrWithBlock:^(NTAttributedStringBuilder *b)
+    {
+        b.link = link;
+    }];
+}
+
+
++(NTAttr *)endLink
+{
+    return [NTAttr attrWithBlock:^(NTAttributedStringBuilder *b)
+    {
+        b.link = nil;
+    }];
+}
+
+
 #define AUTO_METHOD(type,name) +(NTAttr *)name:(type)name { return [NTAttr attrWithBlock:^(NTAttributedStringBuilder *b) { b.name = name; } ]; }
 
 // copy any new declarations and perform an xcode regex search: \+\(NTAttr \*\)(.*):\((.*)\).*$ replace: AUTO_METHOD(\2, \1)

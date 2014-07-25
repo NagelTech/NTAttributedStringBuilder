@@ -197,4 +197,10 @@
 /// @return an instance of NTAttr that will update NTAttributedStringBuilder's current attributes when passed [NTAttributedStringBuilder append:]
 +(NTAttr *)clear;
 
+/// Starts a Link (URL) wit the passed URL. Append endLink to end the current link.
++(NTAttr *)startLink:(NSURL *)link;
+
+/// Ends the current Link (URL), if there is one.
++(NTAttr *)endLink;
+
 @end

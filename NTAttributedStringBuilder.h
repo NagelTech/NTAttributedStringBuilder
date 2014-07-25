@@ -162,6 +162,9 @@
 /// indicating no text effect.
 @property (nonatomic)               NSString *textEffect;
 
+/// Use this property to specify a URL, the default is nil, indicating no URL.
+@property (nonatomic)               NSURL *link;
+
 /// set to YES to enable the LetterPress text effect or NO to disable it.
 /// @remarks this is the same as setting (or clearing) the textEffect property to NSTextEffectLetterpressStyle
 @property (nonatomic)               BOOL textEffectLetterPress;

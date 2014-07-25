@@ -20,3 +20,7 @@
 @interface NSParagraphStyle (NTAttributedStringBuilder) <NTAttributedStringBuilderElement>
 @end
 
+
+@interface NSURL (NTAttributedStringBuilder) <NTAttributedStringBuilderElement>
+
+@end

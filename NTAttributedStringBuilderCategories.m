@@ -36,3 +36,13 @@
 
 @end
 
+
+@implementation NSURL (NTAttributedStringBuilder)
+
+-(void)appendToAttributedStringBuilder:(NTAttributedStringBuilder *)builder
+{
+    builder.link = ([[self description] length]) ? self : nil;
+}
+
+@end
+

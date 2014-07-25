@@ -472,6 +472,21 @@
 }
 
 
+-(NSURL *)link
+{
+    return _attributes[NSLinkAttributeName];
+}
+
+
+-(void)setLink:(NSURL *)link
+{
+    if ( !link )
+        [_attributes removeObjectForKey:NSLinkAttributeName];
+    else
+        _attributes[NSLinkAttributeName] = link;
+}
+
+
 -(UIColor *)foregroundColor
 {
     UIColor *foregroundColor = _attributes[NSForegroundColorAttributeName];
