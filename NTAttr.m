@@ -115,5 +115,6 @@ AUTO_METHOD(NSString *, textEffect)
 AUTO_METHOD(BOOL, textEffectLetterPress)
 AUTO_METHOD(UIColor *, foregroundColor)
 AUTO_METHOD(UIColor *, backgroundColor)
+AUTO_METHOD(CGFloat, kern)
 
 @end

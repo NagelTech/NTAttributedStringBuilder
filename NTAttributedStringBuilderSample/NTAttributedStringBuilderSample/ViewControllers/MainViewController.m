@@ -89,7 +89,8 @@
     
     b.lineHeightMultiple = 1.10;
     b.paragraphSpacing = 1.0;
-    
+    b.kern = -0.5;
+
     NSArray *headerStyle = @[[UIFont fontWithName:@"Chalkduster" size:24.0], [UIColor blackColor]];
     NSArray *noteStyle = @[[UIFont fontWithName:@"Avenir-LightOblique" size:12.0], [UIColor colorWithWhite:0.20 alpha:1.0]];
     NSArray *normalStyle = @[[UIFont fontWithName:@"Avenir-Medium" size:16.0], [UIColor colorWithWhite:0.20 alpha:1.0]];

@@ -184,6 +184,11 @@
 /// @return an instance of NTAttr that will update NTAttributedStringBuilder's current attributes when passed [NTAttributedStringBuilder append:]
 +(NTAttr *)backgroundColor:(UIColor *)backgroundColor;
 
+/// This value specifies the number of points by which to adjust kern-pair characters. Kerning prevents unwanted space from occurring
+/// between specific characters and depends on the font. The value 0 means kerning is disabled. The default value for this attribute
+/// is 0.
++(NTAttr *)kern:(CGFloat)kern;
+
 /// Push the current attributes onto a stack.
 /// @return an instance of NTAttr that will update NTAttributedStringBuilder's current attributes when passed [NTAttributedStringBuilder append:]
 +(NTAttr *)push;

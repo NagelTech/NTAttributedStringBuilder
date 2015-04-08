@@ -177,6 +177,11 @@
 /// background color is drawn.
 @property (nonatomic)               UIColor *backgroundColor;
 
+/// This value specifies the number of points by which to adjust kern-pair characters. Kerning prevents unwanted space from occurring
+/// between specific characters and depends on the font. The value 0 means kerning is disabled. The default value for this attribute
+/// is 0.
+@property (nonatomic)               CGFloat kern;
+
 -(id)init;
 
 /// Push the current attributes onto a stack.

@@ -521,6 +521,21 @@
 }
 
 
+-(CGFloat)kern
+{
+    return (CGFloat)[_attributes[NSKernAttributeName] doubleValue];
+}
+
+
+-(void)setKern:(CGFloat)kern
+{
+    if ( kern == 0 )
+        [_attributes removeObjectForKey:NSKernAttributeName];
+    else
+        _attributes[NSKernAttributeName] = @(kern);
+}
+
+
 #pragma mark - push/pop
 
 
