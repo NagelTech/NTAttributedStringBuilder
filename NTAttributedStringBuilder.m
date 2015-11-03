@@ -597,6 +597,14 @@
         
         return ;
     }
+
+    // Append text attachments...
+
+    if ( [item isKindOfClass:[NSTextAttachment class]])
+    {
+        [_attributedString appendAttributedString:[NSAttributedString attributedStringWithAttachment:item]];
+        return ;
+    }
     
     // Handle dictionaries, which are added as attributes...
     
@@ -616,7 +624,7 @@
         
         return ;
     }
-    
+
     // Append elements...
     
     if ( [item conformsToProtocol:@protocol(NTAttributedStringBuilderElement)] )
